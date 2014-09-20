@@ -84,7 +84,7 @@ TARGET_OTA_ASSERT_DEVICE := moto_msm8960_jbbl,moto_msm8960,xt901,solstice,xt905,
 
 # Recovery
 TARGET_RECOVERY_NO_MSM_BSP := true
-BOARD_CUSTOM_GRAPHICS := ../../../$(LOCAL_PATH)/graphics.c
+#BOARD_CUSTOM_GRAPHICS := ../../../$(LOCAL_PATH)/graphics.c
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBA_8888"
 TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/etc/fstab.qcom
 BOARD_RECOVERY_SWIPE := true
@@ -93,6 +93,12 @@ BOARD_RECOVERY_SWIPE := true
 TW_EXTERNAL_STORAGE_PATH := "/external_sd"
 TW_EXTERNAL_STORAGE_MOUNT_POINT := "external_sd"
 TARGET_USERIMAGES_USE_EXT4 := true
-# Needs to be changed for M
-DEVICE_RESOLUTION := 720x1280
-#DEVICE_RESOLUTION := 540x960
+DEVICE_RESOLUTION := 540x960
+RECOVERY_GRAPHICS_USE_LINELENGTH := true
+BOARD_HAS_NO_REAL_SDCARD := true
+RECOVERY_SDCARD_ON_DATA := true
+TARGET_RECOVERY_INITRC := device/motorola/moto_msm8960/recovery.rc
+TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
+TW_BRIGHTNESS_PATH := /sys/devices/i2c-10/10-0038/backlight/lcd-backlight/brightness
+TW_MAX_BRIGHTNESS := 255
+TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun0/file
