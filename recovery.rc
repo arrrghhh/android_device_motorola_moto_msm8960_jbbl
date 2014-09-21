@@ -15,6 +15,10 @@ on init
     mkdir /cache
     mount /tmp /tmp tmpfs
 
+    setprop usb.vendor 0x22b8
+    setprop usb.product.mtpadb 0x2e22
+    setprop usb.product.adb 0x2e22
+
 on boot
 
     ifup lo
